@@ -1,9 +1,11 @@
 import React, { ReactNode } from "react";
-import Navbar from '../../componets/Navbar/Navbar'
+import Navbar from '../Navbar/Navbar';
+
+import styles from './Layout.module.css';
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <Navbar />
       {children}
       <footer>This is the footer</footer>

@@ -1,7 +1,5 @@
 import { AppProps } from "next/app";
-import Layout from "@componets/Layout/Layout";
-
-import "../style.css";
+import Layout from "@componets/Layout/Layout.component";
 
 function MyApp({ Component, pageProps }: AppProps) {
   //En el archivo _app podemos inyectarle anábolicos (providers,
@@ -10,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   //Layout
 
   return (
-    <div className="container">
+    <div>
       <Layout>
         <Component {...pageProps} />;
       </Layout>
