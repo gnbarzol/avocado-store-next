@@ -10,12 +10,18 @@ const ProductItem = () => {
   const url = `http://localhost:3000/api/avo/${id}`;
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => console.log(res.json()))
-      // .then((data) => console.log(data));
+    window
+      .fetch(url)
+      .then((res) => res.json())
+      .then(({ data }) => setProduct(data));
   }, []);
 
-  return <div>Esta es la pagina del producto: {id}</div>;
+  return (
+    <div>
+      <p>id: {product?.id || "Sin id"}</p>
+      <p>nombre: {product?.name || "Sin nombre"}</p>
+    </div>
+  );
 };
 
 export default ProductItem;
