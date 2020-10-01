@@ -1,12 +1,17 @@
-import { AppProps } from 'next/app'
+import { AppProps } from "next/app";
+import Layout from "../componets/Layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  //En el archivo _app podemos inyectarle anábolicos (providers, 
+  //En el archivo _app podemos inyectarle anábolicos (providers,
   //themes, props, o cualquier cosa que necesitemos) a toda nuestra aplicación.
 
   //Layout
 
-  return <Component {...pageProps} />;
+  return (
+    <Layout>
+      <Component {...pageProps} />;
+    </Layout>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
