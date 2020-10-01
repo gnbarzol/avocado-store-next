@@ -1,6 +1,8 @@
 import { AppProps } from "next/app";
 import Layout from "@componets/Layout/Layout";
 
+import "../style.css";
+
 function MyApp({ Component, pageProps }: AppProps) {
   //En el archivo _app podemos inyectarle anábolicos (providers,
   //themes, props, o cualquier cosa que necesitemos) a toda nuestra aplicación.
@@ -8,9 +10,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   //Layout
 
   return (
-    <Layout>
-      <Component {...pageProps} />;
-    </Layout>
+    <div className="container">
+      <Layout>
+        <Component {...pageProps} />;
+      </Layout>
+    </div>
   );
 }
 
